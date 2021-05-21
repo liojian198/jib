@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class JibdemoApplication {
 
 	@GetMapping("/hello/{name}")
-	public String hello(@PathVariable("name") String name) {
+	public String hello(@PathVariable("name") String name) throws InterruptedException {
+		Thread.sleep(10000);
 		return "hello " + name;
 	}
 	public static void main(String[] args) {
